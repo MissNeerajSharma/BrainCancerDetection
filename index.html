@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Brain Tumor Detection</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4a00e0, #8e2de2);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 2em;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="file"] {
+      border: 2px dashed #ccc;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      background: #f8f9fa;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      border-color: #8e2de2;
+    }
+
+    button {
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #4a00e0;
+      text-align: center;
+    }
+
+    .confidence {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #555;
+      text-align: center;
+    }
+
+    .image-preview {
+      margin-top: 30px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-preview img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      margin: 50px 0;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #4a00e0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 25px;
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>🧠 AI Brain CT Scan Tumor Detection</header>
+
+  <main>
+    <form method="POST" enctype="multipart/form-data" id="uploadForm">
+      <input type="file" name="file" id="fileInput" accept="image/*" required />
+      <button type="submit">Upload & Predict</button>
+    </form>
+
+    <div class="image-preview" id="imagePreview">
+      {% if file_path %}
+        <img src="{{ file_path }}" alt="Uploaded Image Preview">
+      {% endif %}
+    </div>
+
+    {% if result %}
+      <div class="result">Result: {{ result }}</div>
+    {% endif %}
+
+    {% if confidence %}
+      <div class="confidence">Confidence: {{ confidence }}</div>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>Developed by <strong>Neeraj Sharma</strong> |
+      <a href="https://www.linkedin.com/in/neeraj-sharma-6017b854/" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>
