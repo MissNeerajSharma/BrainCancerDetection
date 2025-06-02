@@ -20,6 +20,8 @@ This project leverages **VGG16**, a pre-trained CNN model trained on over 14 mil
 
 🧪 Try uploading a brain CT image and get predictions in real time.  
 The model returns the **tumor type** and **prediction confidence score**.
+![App Screenshot]([https://github.com/MissNeerajSharma/BrainCancerDetection/blob/main/Screenshot%202025-06-02%20145129.png](https://github.com/MissNeerajSharma/BrainCancerDetection/blob/main/R2.mp4)) <!-- Add your own screenshot -->
+
 
 ---
 
@@ -61,3 +63,18 @@ The model returns the **tumor type** and **prediction confidence score**.
 ```bash
 git clone https://github.com/your-username/brain-tumor-detector.git
 cd brain-tumor-detector
+
+### 📁 Folder Structure
+
+brain-tumor-detector/
+│
+├── model/
+│   └── model123.h5           # Trained model
+├── uploads/                  # Temporary folder for user-uploaded images
+├── templates/
+│   └── index.html            # Frontend template
+├── static/                   # CSS, JS (if needed)
+├── app.py                    # Flask backend
+├── requirements.txt
+└── README.md
+
