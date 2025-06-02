@@ -12,7 +12,7 @@ This project leverages **VGG16**, a pre-trained CNN model trained on over 14 mil
 
 ## 📸 Preview
 
-![App Screenshot](screenshots/demo_ui.png) <!-- Add your own screenshot -->
+![App Screenshot](https://github.com/MissNeerajSharma/BrainCancerDetection/blob/main/Screenshot%202025-06-02%20145129.png) <!-- Add your own screenshot -->
 
 ---
 
