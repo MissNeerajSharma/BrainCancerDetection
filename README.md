@@ -77,4 +77,4 @@ brain-tumor-detector/
 ├── app.py                    # Flask backend
 ├── requirements.txt
 └── README.md
-
+#Vgg16 #liveProject #DeepLearning #endtoend #neerajSharma
